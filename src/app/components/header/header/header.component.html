@@ -65,7 +65,7 @@
   <div class="left-menu__sub-categories" [ngClass]="{'left-menu__sub-categories__open': subCategoriesMenuOpen}">
     <ul class="left-menu__categorises">
 
-      <li class="left-menu__sub-categories__sub-category" *ngFor="let category of subCategoriesArr">
+      <li (click)="closeAllMenus()" class="left-menu__sub-categories__sub-category" *ngFor="let category of subCategoriesArr">
         <a [routerLink]="[ '/shop', category.category,category.name ]">{{category.name}}</a>
       </li>
     </ul>

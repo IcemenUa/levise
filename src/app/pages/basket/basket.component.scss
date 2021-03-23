@@ -1,0 +1,144 @@
+.content-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+
+}
+
+.basket {
+
+  height: 100vh;
+  width: 70%;
+
+  .basket__name {
+    font-size: 17px;
+    font-weight: 700;
+    font-family: 'interstate';
+    margin: 3vw 0 0 2vw;
+    text-align: left;
+  }
+
+
+}
+
+.basket__products {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 15px;
+}
+
+.product-card {
+  font-weight: 700;
+  font-family: 'interstate';
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+  height: 100px;
+  padding: 1%;
+  box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.75);
+  margin-bottom: 20px;
+
+  .product-card__name {
+    font-size: 17px;
+    width: 30%;
+  }
+
+}
+
+.product-card__images {
+  width: 25%;
+  display: flex;
+  justify-content: space-between;
+
+  img {
+    width: 60px;
+    height: 90px;
+  }
+}
+
+.product-card__price {
+  display: flex;
+  width: 20%;
+}
+
+.product-card__price__counter {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  margin-right: 15%;
+
+  .product-card__price__counter__btn {
+    cursor: pointer;
+    display: block;
+    width: 30%;
+  }
+
+  .product-card__price__counter__quantity {
+    width: 30%;
+  }
+
+  .product-card__price__counter__price {
+    text-align: center;
+    width: 40%;
+
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding-top: 3vw;
+  width: 30%;
+  height: 100vh;
+  font-size: 17px;
+  font-weight: 700;
+  font-family: 'interstate';
+
+  .form__input {
+    display: block;
+    margin-bottom: 20px;
+    width: 90%;
+    height: 50px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 1);
+    min-width: 250px;
+    outline: none;
+    line-height: 50px;
+    // color: rgba(0, 0, 0, 1);
+    font-size: 17px;
+    font-weight: 700;
+    font-family: 'interstate';
+  }
+
+  .form__input:focus {
+    border-bottom: 3px solid rgb(179, 179, 179);
+
+  }
+
+  .form__input.ng-touched.ng-valid {
+    border-bottom: 1px solid rgb(60, 245, 43);
+  }
+
+  .form__input.ng-touched.ng-invalid {
+    border-bottom: 3px solid rgb(255, 0, 0);
+  }
+}
+
+.form__total-price-and-buy {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+.form__total-price-and-buy__btn{
+  width: 200px;
+  outline: none;
+  border: none;
+background-color:lightgray;
+
+}
+.form__total-price-and-buy__btn:active{
+transform: scale(1.01);
+background-color:rgb(126, 126, 126);
+}

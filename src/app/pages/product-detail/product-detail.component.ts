@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { ActivatedRoute, Router, Event, NavigationEnd } from '@angular/router';
 import { ProductsService } from '../../shared/services/products.service';
+import { BasketService } from '../../shared/services/basket.service';
+import { FormBuilder, Validators } from '@angular/forms';
+import { Product } from '../../shared/models/product.model';
 
 @Component({
   selector: 'app-product-detail',
@@ -11,8 +14,10 @@ import { ProductsService } from '../../shared/services/products.service';
 export class ProductDetailComponent implements OnInit {
   product: any;
   quantity = 1;
-
-  constructor(private activatedRoute: ActivatedRoute, private productService: ProductsService, private firestore: AngularFirestore, private activatedRote: ActivatedRoute, private router: Router) {
+  sizeForm = this.formBuilder.group({
+    "size": ["", [Validators.required]],
+  })
+  constructor(private formBuilder: FormBuilder, private basketService: BasketService, private activatedRoute: ActivatedRoute, private productService: ProductsService, private firestore: AngularFirestore, private activatedRote: ActivatedRoute, private router: Router) {
 
   }
 
@@ -42,10 +47,14 @@ export class ProductDetailComponent implements OnInit {
   }
   quantityDecrement(): void {
     if (this.quantity > 1) {
-
       this.quantity--
     }
 
   }
-
+  addToBasket(): void {
+    const productID = this.activatedRoute.snapshot.paramMap.get('prodID')
+    const product = new Product(productID, this.product.productName, this.product.productImages, this.sizeForm.value.size, this.quantity, this.product.productPrice)
+    this.basketService.addToBasket(product);
+    // console.log(JSON.parse(localStorage.getItem('basket')));
+  }
 }

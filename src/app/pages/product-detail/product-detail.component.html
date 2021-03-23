@@ -14,41 +14,42 @@
   </div>
   <div class="detail-container__about-and-buy">
 
-    <p class="detail-container__about-and-buy__product-name">{{product.productName}}</p>
+    <p class="detail-container__about-and-buy__product-name">{{product?.productName}}</p>
     <!-- about product and buy options -->
     <div class="detail-container__about-and-buy__select-size">
+      <form [formGroup]="sizeForm">
+        <p>Select Size:</p>
+        <!-- radio size form -->
+        <div class="detail-container__about-and-buy__select-size-form-radio-btn">
+          <input id="radio-XS" type="radio" name="size" value="XS" [disabled]=!product?.XS formControlName="size">
+          <label for="radio-XS">XS</label>
+        </div>
 
-      <p>Select Size:</p>
-      <!-- radio size form -->
-      <div class="detail-container__about-and-buy__select-size-form-radio-btn">
-        <input id="radio-XS" type="radio" name="radio" value="XS" [disabled]=!product.XS>
-        <label for="radio-XS">XS</label>
-      </div>
+        <div class="detail-container__about-and-buy__select-size-form-radio-btn">
+          <input id="radio-S" type="radio" name="size" value="S" [disabled]=!product?.S formControlName="size">
+          <label for="radio-S">S</label>
+        </div>
 
-      <div class="detail-container__about-and-buy__select-size-form-radio-btn">
-        <input id="radio-S" type="radio" name="radio" value="S" [disabled]=!product.S>
-        <label for="radio-S">S</label>
-      </div>
+        <div class="detail-container__about-and-buy__select-size-form-radio-btn">
+          <input id="radio-M" type="radio" name="size" value="M" [disabled]=!product?.M formControlName="size">
+          <label for="radio-M">M</label>
+        </div>
 
-      <div class="detail-container__about-and-buy__select-size-form-radio-btn">
-        <input id="radio-M" type="radio" name="radio" value="M" [disabled]=!product.M>
-        <label for="radio-M">M</label>
-      </div>
+        <div class="detail-container__about-and-buy__select-size-form-radio-btn">
+          <input id="radio-L" type="radio" name="size" value="L" [disabled]=!product?.L formControlName="size">
+          <label for="radio-L">L</label>
+        </div>
 
-      <div class="detail-container__about-and-buy__select-size-form-radio-btn">
-        <input id="radio-L" type="radio" name="radio" value="L" [disabled]=!product.L>
-        <label for="radio-L">L</label>
-      </div>
+        <div class="detail-container__about-and-buy__select-size-form-radio-btn">
+          <input id="radio-XL" type="radio" name="size" value="XL" [disabled]=!product?.XL formControlName="size">
+          <label for="radio-XL">XL</label>
+        </div>
 
-      <div class="detail-container__about-and-buy__select-size-form-radio-btn">
-        <input id="radio-XL" type="radio" name="radio" value="XL" [disabled]=!product.XL>
-        <label for="radio-XL">XL</label>
-      </div>
-
-      <div class="detail-container__about-and-buy__select-size-form-radio-btn">
-        <input id="radio-XXL" type="radio" name="radio" value="XXL" [disabled]=!product.XXL>
-        <label for="radio-XXL">XXL</label>
-      </div>
+        <div class="detail-container__about-and-buy__select-size-form-radio-btn">
+          <input id="radio-XXL" type="radio" name="size" value="XXL" [disabled]=!product?.XXL formControlName="size">
+          <label for="radio-XXL">XXL</label>
+        </div>
+      </form>
 
     </div>
     <!-- product price -->
@@ -66,16 +67,16 @@
       </div>
 
       <div class="detail-container__about-and-buy__quantity-price__product-price">
-        <p>Price: {{+product.productPrice*quantity | currency:'USD':'symbol-narrow' }}</p>
+        <p>Price: {{+product?.productPrice*quantity | currency:'USD':'symbol-narrow' }}</p>
       </div>
 
     </div>
 
-    <button class="detail-container__about-and-buy__add-to-cart-btn">Add to Bag</button>
+    <button class="detail-container__about-and-buy__add-to-cart-btn" (click)="addToBasket()">Add to Bag</button>
 
     <!-- product description -->
     <div class="detail-container__about-and-buy__description">
-      <p>{{product.description}}</p>
+      <p>{{product?.description}}</p>
 
       <div class="detail-container__about-and-buy__description__tezis">
 
@@ -83,7 +84,7 @@
           <p>How it Fits:</p>
           <div class="tezis">
             <ul>
-              <li *ngFor="let tezis of product.howItFits">{{tezis}}</li>
+              <li *ngFor="let tezis of product?.howItFits">{{tezis}}</li>
             </ul>
           </div>
         </div>
@@ -92,7 +93,7 @@
           <p>Composition & Care:</p>
           <div class="tezis">
             <ul>
-              <li *ngFor="let tezis of product.compositionAndCare">{{tezis}}</li>
+              <li *ngFor="let tezis of product?.compositionAndCare">{{tezis}}</li>
             </ul>
           </div>
         </div>

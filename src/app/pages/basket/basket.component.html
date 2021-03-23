@@ -1,1 +1,61 @@
-<p>basket works!</p>
+<div class="content-container">
+  <div class="basket">
+
+    <h1 class="basket__name">SHOPPING BAG</h1>
+
+    <div class="basket__products">
+
+      <div class="product-card" *ngFor="let product of basket index as index">
+
+        <span class="product-card__name">{{product.name}} ({{product.size}})</span>
+
+        <div class="product-card__images">
+          <img src="{{img}}" alt="" *ngFor="let img of product.image">
+
+        </div>
+
+        <div class="product-card__price">
+
+          <div class="product-card__price__counter">
+            <span class="product-card__price__counter__btn" (click)="quantityDecrement(index)">-</span>
+            <span class="product-card__price__counter__quantity">{{product.quantity}}</span>
+            <span class="product-card__price__counter__btn" (click)="quantityIncrement(index)">+</span>
+          </div>
+
+          <span
+            class="product-card__price__counter__price">{{product.price*product.quantity |currency:'USD':'symbol-narrow'}}
+          </span>
+
+        </div>
+
+        <div class="product-card__delete" (click)="removeProduct(index)">
+
+          <svg viewBox="0 0 329.26933 329" width="20px">
+            <path
+              d="m194.800781 164.769531 128.210938-128.214843c8.34375-8.339844 8.34375-21.824219 0-30.164063-8.339844-8.339844-21.824219-8.339844-30.164063 0l-128.214844 128.214844-128.210937-128.214844c-8.34375-8.339844-21.824219-8.339844-30.164063 0-8.34375 8.339844-8.34375 21.824219 0 30.164063l128.210938 128.214843-128.210938 128.214844c-8.34375 8.339844-8.34375 21.824219 0 30.164063 4.15625 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921875-2.089844 15.082031-6.25l128.210937-128.214844 128.214844 128.214844c4.160156 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921874-2.089844 15.082031-6.25 8.34375-8.339844 8.34375-21.824219 0-30.164063zm0 0" />
+          </svg>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="form">
+    <form [formGroup]="purchaseForm">
+      <input class="form__input" type="text" name="first name" formControlName="first name" placeholder="First Name">
+      <input class="form__input" type="text" name="last name" formControlName="last name" placeholder="Last Name">
+      <input class="form__input" type="text" name="phone number" formControlName="phone number" placeholder="Phone Number">
+      <input class="form__input" type="text" name="city" formControlName="city" placeholder="City">
+      <input class="form__input" type="text" name="address" formControlName="address" placeholder="Address">
+    </form>
+
+    <div class="form__total-price-and-buy">
+      <p>Total: {{totalPrice|currency:'USD':'symbol-narrow'}}</p>
+      <button class="form__total-price-and-buy__btn">Buy</button>
+    </div>
+
+  </div>
+
+</div>

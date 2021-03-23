@@ -3,11 +3,9 @@ import { IProductSize } from './productSize.interface';
 
 export interface IProduct {
     id: string,
-    category: string,
-    subCategory: string,
     name: string,
-    photos: Array<string>,
-    sizes: Array<IProductSize>,
-    description: IProductDescription,
-    price: string
+    image:Array<string>,
+    size:string
+    quantity: number,
+    price: number,
 }
