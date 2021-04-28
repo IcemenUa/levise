@@ -1,7 +1,3 @@
-html{
-  margin-top: 5vh;
-}
-
 .registration {
   margin-top: 5%;
   height: 85vh;
@@ -156,13 +152,31 @@ html{
   color: black;
 }
 
-@media screen and (max-width:320px){
+@media screen and (max-width:1024px){
+  .registration__reg-img {
+    width: 50%;
+    height: 60%;
+    background-size: cover;
+  
+  }
+}
+@media screen and (max-width:768px){
+  .registration__reg-img {
+    width: 50%;
+    height: 45%;
+    background-size: cover;
+  
+  }
+}
+@media screen and (max-width:425px){
   .registration{
     margin-top: 0;
     height: 40vh;
+    display: none;
   }
   .registration__reg-info{
     width: 100%;
+    display: none;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -172,6 +186,7 @@ html{
   }
   .registration__reg-info__btns{
     text-align: center;
+    display: none;
     width: 100%;
     justify-content: center;
   }
@@ -187,5 +202,8 @@ html{
   }
   .category-cards-container__cards{
     width: 60%;
+  }
+  .category-cards-container {
+    display: none;
   }
 }

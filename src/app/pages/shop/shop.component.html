@@ -9,7 +9,7 @@
       style="background-image: url({{product.productImages[0]}});"></div>
 
     <p class="card-container__card__card-name">{{product.productName}}</p>
-    <p class="card-container__card__card-price">{{product.productPrice}}</p>
+    <p class="card-container__card__card-price">{{product.productPrice|currency:'USD':'symbol-narrow'}}</p>
 
   </div>
 

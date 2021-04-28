@@ -23,12 +23,15 @@ export class ShopComponent implements OnInit {
     })
 
     this.router.events.subscribe((event: Event) => {
-      // console.log(event);
+      console.log(event);
       if (event instanceof NavigationEnd) {
-        // console.log(this.activateRoute);
+
         const categoryName = this.activatedRoute.snapshot.paramMap.get('category');
+console.log(categoryName);
+console.log('start');
 
         this.getProducts(categoryName);
+        
       }
     });
 
@@ -36,7 +39,7 @@ export class ShopComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+  
   }
   logID(prodID): void {
     console.log(prodID);
@@ -56,6 +59,7 @@ export class ShopComponent implements OnInit {
         });
       }
     )
+
   }
 
 

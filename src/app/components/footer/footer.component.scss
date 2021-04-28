@@ -1,3 +1,6 @@
+.footer-mobile {
+  display: none;
+}
 
 .footer-categories {
   width: 100%;
@@ -29,3 +32,29 @@ li:hover {
   color: black;
   font-weight: 700;
 }
+
+
+
+
+@media screen and (max-width:768px) {
+  .footer-categories {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: left;
+    font-family: 'helvetica';
+  }
+}
+
+@media screen and (max-width:425px) {
+  .footer-mobile {
+    display: block;
+  }
+
+  .footer {
+    display: none;
+  }
+
+}
+

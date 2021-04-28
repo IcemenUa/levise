@@ -1,0 +1,43 @@
+<div class="content-container">
+  <div class="orders">
+
+    <h1 class="orders__name">ORDERS</h1>
+
+    <div class="orders__products">
+
+      <div class="order-card" *ngFor="let order of ordersInProgress">
+        <span>{{order.orderDate }}</span>
+        <div class="order-card__order-product" *ngFor="let product of order.basket">
+
+          <span class="order-card__order-product__name">{{product.name}} ({{product.size}})</span>
+
+          <div class="order-card__order-product__images">
+            <img src="{{img}}" alt="" *ngFor="let img of product.image">
+
+          </div>
+
+          <div class="order-card__order-product__price">
+
+            <div class="order-card__order-product__price__counter">
+              <span class="order-card__order-product__price__counter__quantity">QUANTITY: {{product.quantity}}</span>
+            </div>
+
+            <span
+              class="order-card__order-product__price__counter__price">{{product.price*product.quantity |currency:'USD':'symbol-narrow'}}
+            </span>
+
+          </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+</div>

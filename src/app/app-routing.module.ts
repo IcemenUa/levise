@@ -11,14 +11,18 @@ import { AdminProductsComponent } from './admin/admin-products/admin-products.co
 import { ShopComponent } from './pages/shop/shop.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { BasketComponent } from './pages/basket/basket.component';
+import { AuthComponent } from './pages/auth/auth.component';
+import { ProfileGuard } from './shared/guards/profile.guard';
 
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
+  // { path: '**', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomePageComponent },
   { path: 'shop/:category/:subCategory', component: ShopComponent,},  
   { path: 'productDetails/:productCategory/:productSubCategory/:prodID', component: ProductDetailComponent },
   { path: 'basket', component: BasketComponent,},
+  { path: 'auth', component: AuthComponent, canActivate: [ProfileGuard]},
   {
     path: 'admin', component: AdminComponent, children: [
       { path: 'adminHome', component: AdminHomePageComponent },

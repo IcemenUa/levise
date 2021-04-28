@@ -14,34 +14,51 @@
 
   <div class="header__search-basket">
 
-    <div class="header__search-basket__search" >
-      <svg height='30%' viewBox="0 0 17 17" id="search">
+    <!-- <div class="header__search-basket__search">
+      <svg width="20px" height="20px" viewBox="0 0 17 17" id="search">
         <path fill-rule="evenodd" clip-rule="evenodd"
           d="M7 6a4 4 0 108 0 4 4 0 00-8 0zm.524 4.89A6 6 0 106.11 9.477L.944 14.642a1 1 0 001.414 1.414l5.165-5.164z">
         </path>
       </svg>
-    </div>
+    </div> -->
 
     <div class="header__search-basket__basket" [routerLink]="[ '/basket']">
-      <svg height='30%' viewBox="0 0 18 18" id="cart">
+      <svg width="20px" height="20px" viewBox="0 0 18 18" id="cart">
         <path fill-rule="evenodd" clip-rule="evenodd"
           d="M7 4a2 2 0 114 0H7zM5 6v1a1 1 0 002 0V6h4v1a1 1 0 102 0V6h2.08l.833 10H2.087L2.92 6H5zm0-2a4 4 0 118 0h3a1 1 0 01.997.917l1 12A1 1 0 0117 18H1a1 1 0 01-.997-1.083l1-12A1 1 0 012 4h3z">
         </path>
       </svg>
     </div>
     <div class="header__search-basket__login">
-
-      <svg height='30%' viewBox="0 -10 490.66667 490" [routerLink]="[ '/admin']">
+      <!-- login btn  -->
+      <svg x="0px" y="0px" width="20px" height="20px" viewBox="0 0 45.532 45.532"
+        style="enable-background:new 0 0 45.532 45.532;" xml:space="preserve" (click)="openModal(register)"
+        *ngIf="!logInStatus">
         <path
-          d="m325.332031 251h-309.332031c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h309.332031c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0" />
+          d="M22.766,0.001C10.194,0.001,0,10.193,0,22.766s10.193,22.765,22.766,22.765c12.574,0,22.766-10.192,22.766-22.765   S35.34,0.001,22.766,0.001z M22.766,6.808c4.16,0,7.531,3.372,7.531,7.53c0,4.159-3.371,7.53-7.531,7.53   c-4.158,0-7.529-3.371-7.529-7.53C15.237,10.18,18.608,6.808,22.766,6.808z M22.761,39.579c-4.149,0-7.949-1.511-10.88-4.012   c-0.714-0.609-1.126-1.502-1.126-2.439c0-4.217,3.413-7.592,7.631-7.592h8.762c4.219,0,7.619,3.375,7.619,7.592   c0,0.938-0.41,1.829-1.125,2.438C30.712,38.068,26.911,39.579,22.761,39.579z" />
+      </svg>
+      <svg x="0px" y="0px" width="20px" height="20px" viewBox="0 0 45.532 45.532"
+        style="enable-background:new 0 0 45.532 45.532;" xml:space="preserve" [routerLink]="[ '/auth']"
+        *ngIf="logInStatus">
         <path
-          d="m240 336.332031c-4.097656 0-8.191406-1.554687-11.308594-4.691406-6.25-6.25-6.25-16.382813 0-22.636719l74.027344-74.023437-74.027344-74.027344c-6.25-6.25-6.25-16.386719 0-22.636719 6.253906-6.25 16.386719-6.25 22.636719 0l85.332031 85.335938c6.25 6.25 6.25 16.382812 0 22.632812l-85.332031 85.332032c-3.136719 3.160156-7.230469 4.714843-11.328125 4.714843zm0 0" />
-        <path
-          d="m256 469.667969c-97.089844 0-182.804688-58.410157-218.410156-148.824219-3.242188-8.191406.808594-17.492188 9.023437-20.734375 8.191407-3.199219 17.515625.789063 20.757813 9.046875 30.742187 78.058594 104.789062 128.511719 188.628906 128.511719 111.742188 0 202.667969-90.925781 202.667969-202.667969s-90.925781-202.667969-202.667969-202.667969c-83.839844 0-157.886719 50.453125-188.628906 128.511719-3.265625 8.257812-12.566406 12.246094-20.757813 9.046875-8.214843-3.242187-12.265625-12.542969-9.023437-20.734375 35.605468-90.414062 121.320312-148.824219 218.410156-148.824219 129.386719 0 234.667969 105.28125 234.667969 234.667969s-105.28125 234.667969-234.667969 234.667969zm0 0" />
+          d="M22.766,0.001C10.194,0.001,0,10.193,0,22.766s10.193,22.765,22.766,22.765c12.574,0,22.766-10.192,22.766-22.765   S35.34,0.001,22.766,0.001z M22.766,6.808c4.16,0,7.531,3.372,7.531,7.53c0,4.159-3.371,7.53-7.531,7.53   c-4.158,0-7.529-3.371-7.529-7.53C15.237,10.18,18.608,6.808,22.766,6.808z M22.761,39.579c-4.149,0-7.949-1.511-10.88-4.012   c-0.714-0.609-1.126-1.502-1.126-2.439c0-4.217,3.413-7.592,7.631-7.592h8.762c4.219,0,7.619,3.375,7.619,7.592   c0,0.938-0.41,1.829-1.125,2.438C30.712,38.068,26.911,39.579,22.761,39.579z" />
       </svg>
 
-    </div>
 
+    </div>
+    <div class="header__search-basket__sign-out">
+      <svg width="20px" height="20px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+        xml:space="preserve" (click)="signOut()">
+        <path d="M505.664,243.739l-54.783-38.622c-9.926-6.997-23.645,0.128-23.645,12.26v23.622H164.196
+         c-8.284,0-15.001,6.716-15.001,15.001S155.912,271,164.196,271h263.038v23.621c0,12.212,13.792,19.204,23.644,12.26l54.783-38.622
+         C514.027,262.365,514.196,249.767,505.664,243.739z" />
+        <path d="M430.471,352.317c-7.169-4.146-16.347-1.698-20.496,5.474c-35.236,60.916-101.103,101.811-176.372,101.811
+         c-112.266,0-203.602-91.336-203.602-203.602S121.337,52.398,233.603,52.398c75.319,0,141.156,40.933,176.371,101.809
+         c4.148,7.172,13.328,9.619,20.496,5.474c7.171-4.148,9.621-13.325,5.474-20.496C395.418,69.127,319.729,22.397,233.603,22.397
+         C104.49,22.397,0,126.876,0,256c0,129.113,104.479,233.603,233.603,233.603c86.163,0,161.833-46.763,202.342-116.79
+         C440.092,365.642,437.642,356.466,430.471,352.317z" />
+      </svg>
+    </div>
   </div>
 
 </div>
@@ -57,7 +74,7 @@
 
     <ul class="left-menu__categorises">
       <li class="left-menu__categorises__category" *ngFor="let category of categoriesArr"
-        (click)="openSubCategoriesMenu(category.name)">{{category.name}}</li>
+        (click)="openSubCategoriesMenu(category.name) " >{{category.name}}</li>
     </ul>
 
   </div>
@@ -65,10 +82,49 @@
   <div class="left-menu__sub-categories" [ngClass]="{'left-menu__sub-categories__open': subCategoriesMenuOpen}">
     <ul class="left-menu__categorises">
 
-      <li (click)="closeAllMenus()" class="left-menu__sub-categories__sub-category" *ngFor="let category of subCategoriesArr">
+      <li (click)="closeAllMenus()" class="left-menu__sub-categories__sub-category"
+        *ngFor="let category of subCategoriesArr">
         <a [routerLink]="[ '/shop', category.category,category.name ]">{{category.name}}</a>
       </li>
     </ul>
   </div>
 
 </div>
+
+
+
+
+
+<ng-template #register>
+  <div class="modal-body">
+    <div class="form">
+      <form [formGroup]="LogInForm" *ngIf="!registrarionStatus">
+        <input class="form__input" type="text" name="email" formControlName="email" placeholder="Email">
+        <input class="form__input" type="password" name="password" formControlName="password" placeholder="Password">
+
+        <div class="form__btns">
+          <p class="form__btns__btn" (click)="signIn()">Log In</p>
+          <p class="form__btns__btn" (click)="signInToggle()">Sing Up</p>
+        </div>
+
+      </form>
+
+      <form [formGroup]="SignUpForm" *ngIf="registrarionStatus">
+        <input class="form__input" type="text" name="first name" formControlName="first name" placeholder="First Name">
+        <input class="form__input" type="text" name="last name" formControlName="last name" placeholder="Last Name">
+        <input class="form__input" type="text" name="phone number" formControlName="phone number"
+          placeholder="Phone Number">
+        <input class="form__input" type="text" name="city" formControlName="city" placeholder="City">
+        <input class="form__input" type="text" name="address" formControlName="address" placeholder="Address">
+        <input class="form__input" type="text" name="email" formControlName="email" placeholder="Email">
+        <input class="form__input" type="password" name="password" formControlName="password" placeholder="password">
+
+        <div class="form__btns">
+          <p class="form__btns__btn" (click)="signUp()">Sing Up</p>
+          <p class="form__btns__btn" (click)="signInToggle()">Log In</p>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</ng-template>

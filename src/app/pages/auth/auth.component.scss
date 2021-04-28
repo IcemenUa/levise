@@ -1,0 +1,193 @@
+.content-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+margin-bottom: 20px;
+}
+
+
+.orders {
+  width: 100%;
+
+  .orders__name {
+    font-size: 17px;
+    font-weight: 700;
+    font-family: 'interstate';
+    margin: 3vw 0 0 2vw;
+    text-align: left;
+  }
+
+
+}
+
+.orders__products {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 15px;
+}
+
+.order-card {
+  font-weight: 700;
+  font-family: 'interstate';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 95%;
+  min-height: 110px;
+  padding: 1%;
+  box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.75);
+  margin-bottom: 20px;
+
+
+}
+
+.order-card__order-product {
+  height: 90px;
+  width: 99%;
+  border: 1px solid lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 1%;
+  margin-top: 20px;
+
+}
+
+.order-card__order-product__name {
+  font-size: 17px;
+  width: 30%;
+}
+
+
+.order-card__order-product__images {
+  width: 15%;
+  display: flex;
+  justify-content: space-between;
+
+  img {
+    width: 50px;
+    height: 80px;
+  }
+}
+
+.order-card__order-product__price {
+  display: flex;
+  width: 20%;
+}
+
+.order-card__order-product__price__counter {
+  display: flex;
+  justify-content: space-between;
+  width: 45%;
+  margin-right: 12%;
+
+
+
+  .product-card__price__counter__quantity {
+    width: 40%;
+  }
+
+  .product-card__price__counter__price {
+    text-align: center;
+    width: 30%;
+
+  }
+}
+
+@media screen and (max-width:1024px) {
+  .order-card__order-product__name {
+   
+    width: 35%;
+  }
+  
+  .order-card__order-product__images {
+    width: 20%;
+  }
+  
+  .order-card__order-product__price {
+    display: flex;
+    width: 25%;
+  }
+  
+}
+
+@media screen and (max-width:768px) {
+  .order-card__order-product__name {
+   
+    width: 35%;
+  }
+  
+  .order-card__order-product__images {
+    width: 25%;
+  }
+  
+  .order-card__order-product__price {
+    display: flex;
+    width: 35%;
+  }
+  
+}
+@media screen and (max-width:425px) {
+
+  .order-card {
+
+    width: 98%;
+    font-weight: 700;
+    font-size: 14px;
+    font-family: 'interstate';
+  
+  }
+
+  .order-card__order-product__name {
+    width: 42%;
+  }
+  
+  .order-card__order-product__images {
+    display: none;
+  }
+  
+  .order-card__order-product__price {
+    display: flex;
+    width: 55%;
+  }
+
+  
+}
+@media screen and (max-width:320px) {
+
+  .order-card {
+    width: 98%;
+    font-weight: 700;
+    font-size: 14px;
+    font-family: 'interstate';
+  
+  }
+
+  .order-card__order-product__name {
+    width: 42%;
+    font-size: 14px;
+
+  }
+  .order-card__order-product__price__counter{
+    width: 55%;
+  }
+
+  .order-card__order-product__images {
+    display: none;
+  }
+  
+  .order-card__order-product__price {
+    display: flex;
+    width: 55%;
+  }
+
+  
+}
+
+
+
+
+
+

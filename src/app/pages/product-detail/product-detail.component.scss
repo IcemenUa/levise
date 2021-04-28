@@ -5,12 +5,14 @@
 
 carousel {
   z-index: 1;
+width: 100%;
 }
 
 .detail-container {
   width: 100%;
   display: flex;
   justify-content: space-around;
+
 }
 
 .detail-container__images {
@@ -121,7 +123,7 @@ carousel {
 .detail-container__about-and-buy__add-to-cart-btn {
   margin-top: 3%;
   border: 1px solid black;
-  height: 2vw;
+  height: 30px;
   border-radius: 6px;
   background-color: white;
   font-family: Arial, sans-serif;
@@ -130,8 +132,8 @@ carousel {
 }
 
 .detail-container__about-and-buy__add-to-cart-btn:active {
- background-color: rgba(224, 222, 222, 0.329);
-transform: scale(1.01);
+  background-color: rgba(224, 222, 222, 0.329);
+  transform: scale(1.01);
 }
 
 
@@ -172,4 +174,152 @@ transform: scale(1.01);
 .tezis {
   color: grey;
   font-size: 15px;
+  display: inline-block;
+}
+
+// laptop
+
+@media screen and (max-width:1024px) {
+  .detail-container__images {
+    width: 50%;
+  }
+
+  .detail-container__about-and-buy {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+// tablet
+@media screen and (max-width:768px) {
+  .detail-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+  }
+
+  .detail-container__images {
+    height: 93vh;
+    width: 100%;
+  }
+  
+  .detail-container__about-and-buy {
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .detail-container__about-and-buy__quantity-price__product-quantity__btn {
+    height: 25px;
+    width: 25px;
+    line-height: 25px;
+    text-align: center;
+  }
+  .detail-container__about-and-buy__quantity-price__product-quantity__number {
+    line-height: 25px;
+    height: 25px;
+    width: 35px;
+    text-align: center;
+  }
+  
+  
+.detail-container__about-and-buy__quantity-price {
+  margin-top: 3%;
+  display: flex;
+  font-family: 'interstateBold', Arial, sans-serif;
+  font-weight: 900;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 25px;
+}
+
+  .detail-container__about-and-buy__description__tezis {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: 7%;
+  }
+  .detail-container__about-and-buy__description__tezis__how-it-fits {
+    width:48%;
+    text-align: center;
+  }
+  .detail-container__about-and-buy__description__tezis__composition-and-care {
+    width: 48%;
+    text-align: center;
+  }
+
+}
+
+// moobile L
+
+@media screen and (max-width:425px) {
+
+  .detail-container__images {
+    height: 78vh;
+    width: 100%;
+  }
+  
+  .detail-container__about-and-buy {
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .detail-container__about-and-buy__quantity-price__product-quantity__btn {
+    height: 25px;
+    width: 25px;
+    line-height: 25px;
+    text-align: center;
+  }
+  .detail-container__about-and-buy__quantity-price__product-quantity__number {
+    line-height: 25px;
+    height: 25px;
+    width: 35px;
+    text-align: center;
+  }
+  
+  
+.detail-container__about-and-buy__quantity-price {
+  margin-top: 3%;
+  display: flex;
+  font-family: 'interstateBold', Arial, sans-serif;
+  font-weight: 900;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 25px;
+}
+
+
+.detail-container__about-and-buy__add-to-cart-btn {
+  margin-top: 3%;
+  border: 1px solid black;
+  height: 40px;
+  width: 98%;
+  border-radius: 6px;
+  background-color: white;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+  .detail-container__about-and-buy__description__tezis {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 7%;
+  }
+  .detail-container__about-and-buy__description__tezis__how-it-fits {
+    width:98%;
+    text-align: center;
+  }
+  .detail-container__about-and-buy__description__tezis__composition-and-care {
+    width: 98%;
+    text-align: center;
+  }
+
+
 }

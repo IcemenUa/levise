@@ -5,7 +5,7 @@ import { ProductsService } from '../../shared/services/products.service';
 import { BasketService } from '../../shared/services/basket.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Product } from '../../shared/models/product.model';
-
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
@@ -17,7 +17,7 @@ export class ProductDetailComponent implements OnInit {
   sizeForm = this.formBuilder.group({
     "size": ["", [Validators.required]],
   })
-  constructor(private formBuilder: FormBuilder, private basketService: BasketService, private activatedRoute: ActivatedRoute, private productService: ProductsService, private firestore: AngularFirestore, private activatedRote: ActivatedRoute, private router: Router) {
+  constructor(private toastr: ToastrService, private formBuilder: FormBuilder, private basketService: BasketService, private activatedRoute: ActivatedRoute, private firestore: AngularFirestore,) {
 
   }
 
@@ -54,7 +54,20 @@ export class ProductDetailComponent implements OnInit {
   addToBasket(): void {
     const productID = this.activatedRoute.snapshot.paramMap.get('prodID')
     const product = new Product(productID, this.product.productName, this.product.productImages, this.sizeForm.value.size, this.quantity, this.product.productPrice)
-    this.basketService.addToBasket(product);
-    // console.log(JSON.parse(localStorage.getItem('basket')));
+    if (this.sizeForm.valid) {
+      this.basketService.addToBasket(product);
+      this.toastr.success('product added to cart', 'Cart', {
+        progressBar: true,
+        progressAnimation: 'decreasing',
+        positionClass: 'toast-bottom-right'
+      })
+    }
+    else{
+      this.toastr.info('you must select size', 'Cart', {
+        progressBar: true,
+        progressAnimation: 'decreasing',
+        positionClass: 'toast-bottom-right'
+      })
+    }
   }
 }

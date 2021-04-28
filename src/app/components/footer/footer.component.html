@@ -1,10 +1,10 @@
 
-<footer>
+<footer class="footer">
     <hr>
   <div class="footer-categories">
 
     <div class="footer-categories__special-discounts">
-      <p class="footer-categories__category-name"> Special Discounts</p>
+      <p class="footer-categories__category-name">Special Discounts</p>
       <ol>
         <li>Levi's® Promo Codes</li>
         <li>Teacher Discount</li>
@@ -18,7 +18,7 @@
     <div class="footer-categories__support">
       <p class="footer-categories__category-name">Support</p>
       <ol>
-        <li>Help</li>
+        <li [routerLink]="[ '/admin']">Help</li>
         <li>Returns & Exchanges</li>
         <li>Shipping</li>
         <li>Track Order</li>
@@ -61,5 +61,60 @@
     </div>
 
   </div>
+
+</footer>
+
+<footer class="footer-mobile">
+  <hr>
+ 
+  <accordion [isAnimated]="true">
+    <accordion-group heading="Special Discounts" >
+      <ol>
+        <li>Levi's® Promo Codes</li>
+        <li>Teacher Discount</li>
+        <li>Military Discount</li>
+        <li>Medical & First Responder</li>
+        <li>Student Discount</li>
+        <li>Red Tab™ Member Program</li>
+      </ol>
+    </accordion-group>
+    <accordion-group heading="Support">
+      <ol>
+        <li [routerLink]="[ '/admin']">Help</li>
+        <li>Returns & Exchanges</li>
+        <li>Shipping</li>
+        <li>Track Order</li>
+        <li>Payments Accepted</li>
+        <li>Gift Cards</li>
+        <li>Unsubscribe</li>
+      </ol>
+    </accordion-group>
+    <accordion-group heading="Company">
+      <ol>
+        <li>About Us</li>
+        <li>Our Values</li>
+        <li>Careers</li>
+        <li>Affiliate Program</li>
+        <li>Covid-19 Update</li>
+      </ol>
+    </accordion-group>
+    <accordion-group heading="Store">
+      <ol>
+        <li>Find Stores & Services</li>
+        <li>Reservations</li>
+        <li>Levi's® SecondHand</li>
+
+      </ol>
+    </accordion-group>
+    <accordion-group  heading="Our Brands">
+      <ol>
+        <li>Levi's®</li>
+        <li>Dockers®</li>
+        <li>Denizen® From Levi's®</li>
+        <li>Signature by Levi Strauss & Co.™</li>
+
+      </ol>
+    </accordion-group>
+  </accordion>
 
 </footer>

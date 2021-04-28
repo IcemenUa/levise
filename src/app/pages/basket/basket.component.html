@@ -47,13 +47,14 @@
       <input class="form__input" type="text" name="first name" formControlName="first name" placeholder="First Name">
       <input class="form__input" type="text" name="last name" formControlName="last name" placeholder="Last Name">
       <input class="form__input" type="text" name="phone number" formControlName="phone number" placeholder="Phone Number">
+      <input class="form__input" type="text" name="email" formControlName="email" placeholder="Email">
       <input class="form__input" type="text" name="city" formControlName="city" placeholder="City">
       <input class="form__input" type="text" name="address" formControlName="address" placeholder="Address">
     </form>
 
     <div class="form__total-price-and-buy">
       <p>Total: {{totalPrice|currency:'USD':'symbol-narrow'}}</p>
-      <button class="form__total-price-and-buy__btn">Buy</button>
+      <button class="form__total-price-and-buy__btn" (click)="createOrder()">Buy</button>
     </div>
 
   </div>
